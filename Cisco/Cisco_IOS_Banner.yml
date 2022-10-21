@@ -1,0 +1,29 @@
+- name: General Config
+
+  hosts: networkdevices
+  gather_facts: false
+
+  tasks:
+
+  - name: Configure the login banner
+    cisco.ios.ios_banner:
+      banner: login
+      text: |
+        __________________________________________
+        / UNAUTHORIZED ACCESS TO THIS DEVICE IS   \
+        | PROHIBITED    You must have explicit,   |
+        | authorized permission to access or      |
+        | configure this device. Unauthorized     |
+        | attempts and actions to access or use   |
+        | this system may result in civil and/or  |
+        | criminal penalties. All activities      |
+        | performed on this device are logged and |
+        \ monitored.                              /
+          ---------------------------------------
+                \   ^__^ 
+                  \  (oo)\_______
+                    (__)\       )\/\
+                        ||----w |
+                        ||     ||
+
+      state: present
