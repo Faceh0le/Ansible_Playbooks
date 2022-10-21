@@ -1,0 +1,9 @@
+###SIMPLE NTP PLAYBOOK###
+
+- hosts: GPi
+  gather_facts: no
+  become: yes
+  
+  tasks:
+  - name: set-ntp true
+    shell: timedatectl set-ntp true
